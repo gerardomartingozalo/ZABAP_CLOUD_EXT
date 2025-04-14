@@ -1,0 +1,24 @@
+@Metadata.layer: #INDUSTRY
+annotate entity ZLG_EXTC_ShopTP_GER with
+{
+  @UI.lineItem: [ { position: 21 , importance: #HIGH, label: 'Item Status' },
+                  { position: 10 , type: #FOR_ACTION, dataAction:'zzChangeStatus', label:'Sold Item'}  ] //boton
+  @UI.identification: [ { position: 21 , label: 'Item Status' },
+                        { position: 10 , type: #FOR_ACTION, dataAction:'zzChangeStatus', label:'Sold Item'} ] //boton detalle
+
+  //filtro parte superior
+  @UI.selectionField: [ { position: 21 } ]
+  zzstatuszaa;
+
+
+
+  @UI.lineItem: [ { position: 90 , importance: #HIGH, label: 'Sale Date' }]
+  @UI.identification: [ { position: 90 , label: 'Sale Date' }]
+  @UI.selectionField: [ { position: 90 } ]
+  zzmoddatezaa;
+
+  @UI.lineItem: [ { position: 100 , importance: #HIGH, label: 'Item Disc' }]
+  @UI.identification: [ { position: 100 , label: 'Item Disc' }]
+  @UI.selectionField: [ { position: 100 } ]
+  zzitemdiscountzaa;
+}

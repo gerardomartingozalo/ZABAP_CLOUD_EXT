@@ -1,0 +1,5 @@
+@AbapCatalog.extensibility.extensible: true
+@ObjectModel.leadingEntity.name: 'ZLG_EXTC_ShopTP_GER'
+define service ZLG_EXTUI_Shop_GER {
+  expose ZLG_EXTC_SHOPTP_GER as Shop;
+}
