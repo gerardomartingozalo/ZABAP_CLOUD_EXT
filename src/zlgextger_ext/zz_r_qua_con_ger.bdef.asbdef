@@ -1,0 +1,66 @@
+extension using interface zlg_exti_shoptp_ger
+implementation in class zbp_z_r_qua_con_ger unique;
+
+extend behavior for Shop
+
+{
+  extend draft determine action Prepare
+  {
+    validation ZZ_quality_ZAA~ratingInRange;
+  }
+
+  association ZZ_quality_ZAA { create; with draft; }
+
+}
+
+define behavior for z_r_qua_con_ger alias ZZ_quality_ZAA using Z_I_QUA_CON_ger
+with additional save
+persistent table zquality_con_ger
+
+draft table zqual_con_d_ger
+
+lock dependent
+authorization dependent
+late numbering
+
+{
+
+  update ( features : instance );
+  delete ( features : instance );
+
+  field ( readonly )
+  OrderUuid,
+  ReviewId,
+  Supervisor,
+  SupName,
+  HelpfulCount,
+  HelpfulTotal,
+  LocalCreatedAt,
+  LocalLastChangedAt;
+
+  action ( features : instance, authorization : global ) positiveCal result [1] $self;
+  action ( features : instance, authorization : global ) negativeCal result [1] $self;
+
+  validation ratingInRange on save { create; field Rating; }
+
+
+  association _Shop { with draft; }
+
+  mapping for zquality_con_ger
+    {
+      OrderUuid          = order_uuid;
+      OrderedItem        = ordered_item;
+      ReviewId           = review_id;
+      Rating             = rating;
+      FreeTextComment    = free_text_comment;
+      HelpfulCount       = helpful_count;
+      HelpfulTotal       = helpful_total;
+      Supervisor         = supervisor;
+      SupName            = sup_name;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+
+
+
+}

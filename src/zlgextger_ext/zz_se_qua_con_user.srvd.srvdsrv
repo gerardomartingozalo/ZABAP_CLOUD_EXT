@@ -1,0 +1,3 @@
+extend service ZLG_EXTUI_SHOP_GER with {
+  expose Z_C_QUA_CON_GER as zz_quality;
+}

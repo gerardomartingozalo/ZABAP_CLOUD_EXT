@@ -1,0 +1,5 @@
+CLASS zbp_z_r_qua_con_ger DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zlg_extr_shoptp_ger.
+ENDCLASS.
+
+CLASS zbp_z_r_qua_con_ger IMPLEMENTATION.
+ENDCLASS.

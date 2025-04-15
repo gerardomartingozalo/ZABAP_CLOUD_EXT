@@ -1,0 +1,26 @@
+extension for projection;
+
+//estas lineas es como si fuera en el behavior Consumption ZLG_EXTC_ShopTP
+extend behavior for Shop
+{
+
+  use association ZZ_quality_ZAA { create; with draft; }
+
+}
+
+
+define behavior for Z_C_QUA_CON_GER alias ZZ_quality_ZAA
+
+{
+
+  use update;
+  use delete;
+
+  use action positiveCal;
+  use action negativeCal;
+
+
+  use association _Shop { with draft; } //navegacion al padre
+
+
+}
